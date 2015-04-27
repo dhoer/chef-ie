@@ -34,7 +34,7 @@ Tested against IE 11 on Windows Server 2012 R2.
 ## Usage
 
 See [ie_test](https://github.com/dhoer/chef-ie/tree/master/test/fixtures/cookbooks/ie_test) cookbook for examples.
-Note that there is no default recipe.
+Include `ie` as a dependency to make `ie_version` method available. Note that there is no default recipe.
 
 A library method `ie_version` is provided to retrieve the IE version installed:
 
