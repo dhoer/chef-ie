@@ -12,16 +12,20 @@ Configures Internet Explorer to aid tools like [Selenium](http://www.seleniumhq.
 
 The following recipes are available for configuring Internet Explorer:
 
-- **[enhanced_security_configuration](https://github.com/dhoer/chef-ie#enhanced_security_configuration)** -
+- **[esc](https://github.com/dhoer/chef-ie#esc)** -
 Enable/Disable IE Enhanced Security Configuration
-- **[feature_bfcache](https://github.com/dhoer/chef-ie#feature_bfcache)** - Enable/Disable IE Feature Back-Forward
+- **[bfcache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward
 Cache
-- **[security_zones](https://github.com/dhoer/chef-ie#security_zones)** - Configure IE Security Zones;
+- **[zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
 
 A `ie_version` method is also available to retrieve the exact version of Internet Explorer installed.
 
-Tested against IE 11 on Windows Server 2012 R2.
+Tested against:
+
+- IE 11 on Windows Server 2012 R2
+- IE 10 on Windows Server 2008 R1
+- IE 9 on Windows Server 2003 R2
 
 ## Requirements
 
@@ -48,52 +52,48 @@ v = ie_version
 allow_any_instance_of(Chef::Recipe).to receive(:ie_version).and_return('11.0.0.0')
 ```
 
-## ie::enhanced_security_configuration
+## esc
 
 Enable/Disable Internet Explorer Enhanced Security Configuration.
 
-Note this sets `HKEY_CURRENT_USER` keys, so it configures only the user that the chef-client runs as.
-
 ### Attributes
 
-- `node['ie']['enhanced_security_configuration']` - Defaults to `true`
+- `node['ie']['enhanced_security_configuration']` - Defaults to `false` (disabled)
 
 ### Example
 
 Disable enhanced security configuration:
 
 ```ruby
-node.set['ie']['enhanced_security_configuration'] = false
-include_recipe 'ie::enhanced_security_configuration'
+include_recipe 'ie::esc'
 ```
 
-## ie::feature_bfcache
+## bfcache
 
 Enable/Disable IE Feature Back-Forward Cache.  Allows drivers to maintain a connection to IE.
 
 ### Attributes
 
-- `node['ie']['feature_bfcache']` - Defaults to `false`
+- `node['ie']['bfcache']` - Defaults to `true` (enabled)
 
 ### Example
 
-Enable feature_bfcache:
+Enable bfcache:
 
 ```ruby
-node.set['ie']['feature_bfcache'] = true
-include_recipe 'ie::feature_bfcache'
+include_recipe 'ie::bfcache'
 ```
 
-## ie::security_zones
+## zone
 
 Configure IE Security Zones (REG_DWORD types only); Local Home, Internet, Local Internet, Trusted Sites, and
-Restricted Sites. See Zones section in http://support.microsoft.com/kb/182569 for a complete listing of security zone
+Restricted Sites.
+
+See Zones section in http://support.microsoft.com/kb/182569 for a complete listing of security zone
 settings.
 
 A setting of zero sets a specific action as permitted, a setting of one causes a prompt to appear, and a setting
 of three prohibits the specific action.
-
-Note this sets `HKEY_CURRENT_USER` keys, so it configures only the user that the chef-client runs as.
 
 ### Attributes
 

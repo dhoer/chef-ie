@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'ie::enhanced_security_configuration' do
+describe 'ie::esc' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
@@ -35,7 +35,7 @@ describe 'ie::enhanced_security_configuration' do
 
     it 'should warn if not Windows platform' do
       expect(chef_run).to write_log(
-        'Recipe ie::enhanced_security_configuration is only available for Windows platforms!')
+        'Recipe ie::esc is only available for Windows platforms!')
     end
   end
 end

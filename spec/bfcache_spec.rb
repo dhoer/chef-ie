@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'ie::feature_bfcache' do
+describe 'ie::bfcache' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
@@ -20,7 +20,7 @@ describe 'ie::feature_bfcache' do
     end
 
     it 'should warn if not Windows platform' do
-      expect(chef_run).to write_log('Recipe ie::feature_bfcache is only available for Windows platforms!')
+      expect(chef_run).to write_log('Recipe ie::bfcache is only available for Windows platforms!')
     end
   end
 end

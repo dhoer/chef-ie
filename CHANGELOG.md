@@ -1,8 +1,12 @@
 # Changelog
 
+## 2.0.0
+
+- Configure IE for all users via Active Setup
+
 ## 1.0.2
 
-- Update ie_version to support older versions
+- Update ie_version to support older IE browsers
 
 ## 1.0.1
 

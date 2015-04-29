@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'ie::security_zones' do
+describe 'ie::zone' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2').converge(described_recipe)
