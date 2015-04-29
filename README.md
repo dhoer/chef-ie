@@ -99,14 +99,11 @@ of three prohibits the specific action.
 
 ### Attributes
 
-- `node['ie']['zone']['local_home']` - Configure local home zone.  Defaults to `{}`.
-- `node['ie']['zone']['internet']` - Configure internet zone.  Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
-- `node['ie']['zone']['local_internet']` - Configure local internet zone. Defaults `{ '2500' => 0 }`
-(Enable Protected Mode).
-- `node['ie']['zone']['trusted_sites']` - Configure trusted sites zone. Defaults to `{ '2500' => 0 }`
-(Enable Protected Mode).
-- `node['ie']['zone']['restricted_sites']` - Configure restricted sites zone. Defaults to `{ '2500' => 0 }`
-(Enable Protected Mode).
+- `node['ie']['zone']['local_home']` - Defaults to `{}`.
+- `node['ie']['zone']['internet']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
+- `node['ie']['zone']['local_internet']` - Defaults `{ '2500' => 0 }` (Enable Protected Mode).
+- `node['ie']['zone']['trusted_sites']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
+- `node['ie']['zone']['restricted_sites']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
 
 ### Example
 
