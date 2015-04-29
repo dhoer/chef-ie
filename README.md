@@ -22,7 +22,6 @@ Tested against:
 
 - IE 11 on Windows Server 2012 R2
 - IE 10 on Windows Server 2012 R1
-- IE 9 on Windows Server 2008 R1
 
 ## Requirements
 
@@ -133,7 +132,7 @@ include_recipe 'ie::zone'
 
 
 
-## Zone
+## Zoom
 
 Configure IE Zoom level.
 
