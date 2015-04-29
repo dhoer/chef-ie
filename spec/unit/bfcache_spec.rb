@@ -4,7 +4,7 @@ describe 'ie::bfcache' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
-        node.set['ie']['feature_bfcache'] = true
+        node.set['ie']['bfcache'] = true
       end.converge(described_recipe)
     end
 

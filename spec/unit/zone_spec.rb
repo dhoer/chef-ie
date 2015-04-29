@@ -30,7 +30,7 @@ describe 'ie::zone' do
     end
 
     it 'should warn if not Windows platform' do
-      expect(chef_run).to write_log('Recipe ie::security_zones is only available for Windows platforms!')
+      expect(chef_run).to write_log('Recipe ie::zone is only available for Windows platforms!')
     end
   end
 end

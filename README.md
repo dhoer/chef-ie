@@ -8,15 +8,13 @@
 [travis]: https://travis-ci.org/dhoer/chef-ie
 [github]: https://github.com/dhoer/chef-ie/issues
 
-Configures Internet Explorer to aid tools like [Selenium](http://www.seleniumhq.org/).
-
 The following recipes are available for configuring Internet Explorer:
 
-- **[esc](https://github.com/dhoer/chef-ie#esc)** -
+- **[ESC](https://github.com/dhoer/chef-ie#ESC)** -
 Enable/Disable IE Enhanced Security Configuration
-- **[bfcache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward
+- **[BFCache](https://github.com/dhoer/chef-ie#BFCache)** - Enable/Disable IE Feature Back-Forward
 Cache
-- **[zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
+- **[Zone](https://github.com/dhoer/chef-ie#Zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
 
 A `ie_version` method is also available to retrieve the exact version of Internet Explorer installed.
@@ -52,13 +50,15 @@ v = ie_version
 allow_any_instance_of(Chef::Recipe).to receive(:ie_version).and_return('11.0.0.0')
 ```
 
-## esc
+
+
+## ESC
 
 Enable/Disable Internet Explorer Enhanced Security Configuration.
 
 ### Attributes
 
-- `node['ie']['enhanced_security_configuration']` - Defaults to `false` (disabled)
+- `node['ie']['esc']` - Defaults to `false` (disabled)
 
 ### Example
 
@@ -68,7 +68,9 @@ Disable enhanced security configuration:
 include_recipe 'ie::esc'
 ```
 
-## bfcache
+
+
+## BFCache
 
 Enable/Disable IE Feature Back-Forward Cache.  Allows drivers to maintain a connection to IE.
 
@@ -84,7 +86,9 @@ Enable bfcache:
 include_recipe 'ie::bfcache'
 ```
 
-## zone
+
+
+## Zone
 
 Configure IE Security Zones (REG_DWORD types only); Local Home, Internet, Local Internet, Trusted Sites, and
 Restricted Sites.
@@ -112,8 +116,9 @@ Enable both protected mode and javascript for internet zone:
 
 ```ruby
 node.set['ie']['zone']['internet'] = { '2500' => 0, '1400' => 0 }
-include_recipe 'ie::security_zones'
+include_recipe 'ie::zone'
 ```
+
 
 
 ## Getting Help
