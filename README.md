@@ -10,10 +10,8 @@
 
 The following recipes are available for configuring Internet Explorer:
 
-- **[ESC](https://github.com/dhoer/chef-ie#esc)** -
-Enable/Disable IE Enhanced Security Configuration
-- **[BFCache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward
-Cache
+- **[BFCache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward Cache
+- **[ESC](https://github.com/dhoer/chef-ie#esc)** - Enable/Disable IE Enhanced Security Configuration
 - **[Zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
 
@@ -52,24 +50,6 @@ allow_any_instance_of(Chef::Recipe).to receive(:ie_version).and_return('11.0.0.0
 
 
 
-## ESC
-
-Enable/Disable Internet Explorer Enhanced Security Configuration.
-
-### Attributes
-
-- `node['ie']['esc']` - Defaults to `false` (disabled)
-
-### Example
-
-Disable enhanced security configuration:
-
-```ruby
-include_recipe 'ie::esc'
-```
-
-
-
 ## BFCache
 
 Enable/Disable IE Feature Back-Forward Cache.  Allows drivers to maintain a connection to IE.
@@ -84,6 +64,24 @@ Enable bfcache:
 
 ```ruby
 include_recipe 'ie::bfcache'
+```
+
+
+
+## ESC
+
+Enable/Disable Internet Explorer Enhanced Security Configuration (ESC).
+
+### Attributes
+
+- `node['ie']['esc']` - Defaults to `false` (disabled)
+
+### Example
+
+Disable enhanced security configuration:
+
+```ruby
+include_recipe 'ie::esc'
 ```
 
 
@@ -115,7 +113,10 @@ of three prohibits the specific action.
 Enable both protected mode and javascript for internet zone:
 
 ```ruby
-node.set['ie']['zone']['internet'] = { '2500' => 0, '1400' => 0 }
+node.set['ie']['zone']['internet'] = {
+  '2500' => 0, # enable protected zone
+  '1400' => 0  # enable javascript
+}
 include_recipe 'ie::zone'
 ```
 
