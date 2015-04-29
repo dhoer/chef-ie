@@ -10,11 +10,11 @@
 
 The following recipes are available for configuring Internet Explorer:
 
-- **[ESC](https://github.com/dhoer/chef-ie#ESC)** -
+- **[ESC](https://github.com/dhoer/chef-ie#esc)** -
 Enable/Disable IE Enhanced Security Configuration
-- **[BFCache](https://github.com/dhoer/chef-ie#BFCache)** - Enable/Disable IE Feature Back-Forward
+- **[BFCache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward
 Cache
-- **[Zone](https://github.com/dhoer/chef-ie#Zone)** - Configure IE Security Zones;
+- **[Zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
 
 A `ie_version` method is also available to retrieve the exact version of Internet Explorer installed.
