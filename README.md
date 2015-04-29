@@ -14,6 +14,7 @@ The following recipes are available for configuring Internet Explorer:
 - **[ESC](https://github.com/dhoer/chef-ie#esc)** - Enable/Disable IE Enhanced Security Configuration
 - **[Zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
+- **[Zoom](https://github.com/dhoer/chef-ie#zoom)** - Configure IE Zoom Level
 
 A `ie_version` method is also available to retrieve the exact version of Internet Explorer installed.
 
