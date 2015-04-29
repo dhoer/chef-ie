@@ -20,8 +20,8 @@ A `ie_version` method is also available to retrieve the exact version of Interne
 Tested against:
 
 - IE 11 on Windows Server 2012 R2
-- IE 10 on Windows Server 2008 R1
-- IE 9 on Windows Server 2003 R2
+- IE 10 on Windows Server 2012 R1
+- IE 9 on Windows Server 2008 R1
 
 ## Requirements
 
@@ -99,22 +99,55 @@ of three prohibits the specific action.
 
 ### Attributes
 
-- `node['ie']['zone']['local_home']` - Defaults to `{}`.
-- `node['ie']['zone']['internet']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
-- `node['ie']['zone']['local_internet']` - Defaults `{ '2500' => 0 }` (Enable Protected Mode).
-- `node['ie']['zone']['trusted_sites']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
-- `node['ie']['zone']['restricted_sites']` - Defaults to `{ '2500' => 0 }` (Enable Protected Mode).
+- `node['ie']['zone']['local_home']` - Defaults to `{}`
+- `node['ie']['zone']['internet']` - Defaults to `{}`
+- `node['ie']['zone']['local_internet']` - Defaults `{}`
+- `node['ie']['zone']['trusted_sites']` - Defaults to `{}`
+- `node['ie']['zone']['restricted_sites']` - Defaults to `{}`
 
 ### Example
 
-Enable both protected mode and javascript for internet zone:
+Enable both protected mode for main zones and active scripting for internet zone only:
 
 ```ruby
 node.set['ie']['zone']['internet'] = {
-  '2500' => 0, # enable protected zone
-  '1400' => 0  # enable javascript
+  '1400' => 0, # enable active scripting
+  '2500' => 0 # enable protected mode
 }
+
+node.set['ie']['zone']['local_internet'] = {
+  '2500' => 0 # enable protected mode
+}
+
+node.set['ie']['zone']['trusted_sites'] = {
+  '2500' => 0 # enable protected mode
+}
+
+node.set['ie']['zone']['restricted_sites'] = {
+  '2500' => 0 # enable protected mode
+}
+
 include_recipe 'ie::zone'
+```
+
+
+
+## Zone
+
+Configure IE Zoom level.
+
+### Attributes
+
+- `node['ie']['zoom']` - Defaults to `100_000` (100%)
+
+### Example
+
+Set zoom level to 125%:
+
+```ruby
+node.set['ie']['zoom'] = 125_000
+
+include_recipe 'ie::zoom'
 ```
 
 

@@ -4,7 +4,6 @@ describe 'ie::esc' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do |node|
-        node.set['ie']['esc'] = false
         node.set['kernel']['machine'] = 'x86_64'
       end.converge(described_recipe)
     end

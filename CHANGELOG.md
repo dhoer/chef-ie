@@ -3,6 +3,7 @@
 ## 2.0.0
 
 - Configure IE for all users via Active Setup
+- Add IE zoom level
 
 ## 1.0.2
 

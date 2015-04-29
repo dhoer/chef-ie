@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe 'ie::bfcache' do
+describe 'ie::zoom' do
   context 'windows' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2').converge(described_recipe)
     end
 
-    it 'enables back forward cache' do
-      create_registry_key('HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE')
-        .with(name: 'iexplore.exe', type: :dword, data: 0)
+    it 'set zoom level to 100 percent' do
+      create_registry_key('HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ChefIE_Zoom_ZoomFactor')
+        .with(name: 'ZoomFactor', type: :dword, data: 100_000)
     end
   end
 
@@ -18,7 +18,8 @@ describe 'ie::bfcache' do
     end
 
     it 'should warn if not Windows platform' do
-      expect(chef_run).to write_log('Recipe ie::bfcache is only available for Windows platforms!')
+      expect(chef_run).to write_log(
+        'Recipe ie::zoom is only available for Windows platforms!')
     end
   end
 end
