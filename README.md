@@ -12,6 +12,7 @@ The following recipes are available for configuring Internet Explorer:
 
 - **[BFCache](https://github.com/dhoer/chef-ie#bfcache)** - Enable/Disable IE Feature Back-Forward Cache
 - **[ESC](https://github.com/dhoer/chef-ie#esc)** - Enable/Disable IE Enhanced Security Configuration
+- **[FirstRun](https://github.com/dhoer/chef-ie#firstrun)** - Enable/Disable IE 8 & 9 First Run Set Up Pop-up
 - **[Zone](https://github.com/dhoer/chef-ie#zone)** - Configure IE Security Zones;
 Local Home, Internet, Local Internet, Trusted Sites, and Restricted Sites
 - **[Zoom](https://github.com/dhoer/chef-ie#zoom)** - Configure IE Zoom Level
@@ -21,7 +22,8 @@ A `ie_version` method is also available to retrieve the exact version of Interne
 Tested against:
 
 - IE 11 on Windows Server 2012 R2
-- IE 10 on Windows Server 2012 R1
+- IE 10 on Windows Server 2012
+- IE 9 on Windows Server 2008 R1 SP2
 
 ## Requirements
 
@@ -82,6 +84,24 @@ Disable enhanced security configuration:
 
 ```ruby
 include_recipe 'ie::esc'
+```
+
+
+
+## FirstRun
+
+Enable/Disable Internet Explorer 8 & 9 First Run Set Up Pop-up.
+
+### Attributes
+
+- `node['ie']['firstrun']` - Defaults to `false` (disabled)
+
+### Example
+
+Disable first run:
+
+```ruby
+include_recipe 'ie::firstrun'
 ```
 
 

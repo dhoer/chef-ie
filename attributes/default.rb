@@ -2,6 +2,8 @@ default['ie']['bfcache'] = true
 
 default['ie']['esc'] = false
 
+default['ie']['firstrun'] = false
+
 default['ie']['zone']['local_home'] = {}
 default['ie']['zone']['internet'] = {}
 default['ie']['zone']['local_internet'] = {}

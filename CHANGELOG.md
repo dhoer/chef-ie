@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+
+- Add IE first run
+
 ## 2.0.0
 
 - Configure IE for all users via Active Setup
