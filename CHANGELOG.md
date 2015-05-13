@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- Remove Chef 12 source_url and issues_url from metadata
+
 ## 2.1.0
 
 - Add IE first run
