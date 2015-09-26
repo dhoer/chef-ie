@@ -4,7 +4,7 @@ ACTIVE_SETUP_ZONES = 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\
 
 if platform?('windows')
   timestamp = Time.now.to_i
-  security_zones =  node['ie']['zone']
+  security_zones = node['ie']['zone']
 
   security_zones['local_home'].each do |k, v|
     registry_key "#{ACTIVE_SETUP_ZONES}0_#{k}" do
