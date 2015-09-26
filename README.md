@@ -2,11 +2,9 @@
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/ie.svg?style=flat-square)][cookbook]
 [![Build Status](http://img.shields.io/travis/dhoer/chef-ie.svg?style=flat-square)][travis]
-[![GitHub Issues](http://img.shields.io/github/issues/dhoer/chef-ie.svg?style=flat-square)][github]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/ie
 [travis]: https://travis-ci.org/dhoer/chef-ie
-[github]: https://github.com/dhoer/chef-ie/issues
 
 The following recipes are available for configuring Internet Explorer:
 
@@ -27,7 +25,7 @@ Tested against:
 
 ## Requirements
 
-- Chef 11.6.0 or higher (includes a built-in registry_key resource)
+- Chef 11.6+ (includes a built-in registry_key resource)
 
 ## Platforms
 
