@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.2
+
+- Add source_url and issues_url to metadata
+- Update metadata description
+
 ## 2.1.1
 
 - Remove Chef 12 source_url and issues_url from metadata
