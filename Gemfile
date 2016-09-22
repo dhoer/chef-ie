@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'foodcritic', '~> 4.0'
-gem 'rubocop', '~> 0.26'
-gem 'chefspec', '~> 4.0'
-gem 'berkshelf', '~> 3.1'
+gem 'foodcritic'
+gem 'rubocop'
+gem 'chefspec'
 gem 'chef', '~> 12.0'
+gem 'berkshelf', '~> 4.0'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.2'
-  gem 'kitchen-vagrant', '~> 0.15'
+  gem 'test-kitchen', '~> 1.13'
+  gem 'winrm-fs', '~> 1.0'
+  gem 'kitchen-localhost', '~> 0.0'
+  gem 'kitchen-vagrant', '~> 0.20'
 end
