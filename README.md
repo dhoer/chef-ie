@@ -172,7 +172,7 @@ include_recipe 'ie::zoom'
 
 ## Getting Help
 
-- Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/chef-ie).
+- Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/chef+ie).
 - Report bugs and discuss potential features in [Github issues](https://github.com/dhoer/chef-ie/issues).
 
 ## Contributing
