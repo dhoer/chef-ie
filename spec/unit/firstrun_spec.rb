@@ -25,7 +25,7 @@ describe 'ie::firstrun' do
 
   context 'not windows' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new.converge(described_recipe)
+      ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04').converge(described_recipe)
     end
 
     it 'should warn if not Windows platform' do
