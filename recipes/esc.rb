@@ -13,7 +13,7 @@ if platform?('windows')
   registry_key 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ChefIE_ESCZoneMap_IEHarden' do
     values [
       { name: 'Version', type: :string, data: Time.now.to_i },
-      { name: 'StubPath', type: :string, data: "reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\" \
+      { name: 'StubPath', type: :string, data: 'reg add "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\' \
           "Internet Settings\\ZoneMap\" /v IEHarden /d #{value} /t REG_DWORD /f" }
     ]
   end

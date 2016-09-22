@@ -1,6 +1,6 @@
 # https://support.microsoft.com/en-us/kb/182569
-SECURITY_ZONES = 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Zones'
-ACTIVE_SETUP_ZONES = 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ChefIE_Zone'
+SECURITY_ZONES = 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Zones'.freeze
+ACTIVE_SETUP_ZONES = 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ChefIE_Zone'.freeze
 
 if platform?('windows')
   timestamp = Time.now.to_i

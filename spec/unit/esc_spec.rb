@@ -10,19 +10,22 @@ describe 'ie::esc' do
 
     it 'disable user enhanced_security_configuration' do
       create_registry_key(
-        'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}')
+        'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}'
+      )
         .with(name: 'IsInstalled', type: :dword, data: 0)
     end
 
     it 'disable administrators enhanced_security_configuration' do
       create_registry_key(
-        'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}')
+        'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}'
+      )
         .with(name: 'IsInstalled', type: :dword, data: 0)
     end
 
     it 'turn off ieharden' do
       create_registry_key(
-        'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap')
+        'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap'
+      )
         .with(name: 'IEHarden', type: :dword, data: 0)
     end
   end
@@ -34,7 +37,8 @@ describe 'ie::esc' do
 
     it 'should warn if not Windows platform' do
       expect(chef_run).to write_log(
-        'Recipe ie::esc is only available for Windows platforms!')
+        'Recipe ie::esc is only available for Windows platforms!'
+      )
     end
   end
 end

@@ -9,7 +9,7 @@ if platform?('windows')
   registry_key 'HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\ChefIE_FirstRun_DisableFirstRunCustomize' do
     values [
       { name: 'Version', type: :string, data: Time.now.to_i },
-      { name: 'StubPath', type: :string, data: "reg add \"HKCU\\SOFTWARE\\Policies\\Microsoft\\"\
+      { name: 'StubPath', type: :string, data: 'reg add "HKCU\\SOFTWARE\\Policies\\Microsoft\\'\
       "Internet Explorer\\Main\" /v DisableFirstRunCustomize /d #{value} /t REG_DWORD /f" }
     ]
   end

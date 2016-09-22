@@ -19,7 +19,8 @@ describe 'ie::zoom' do
 
     it 'should warn if not Windows platform' do
       expect(chef_run).to write_log(
-        'Recipe ie::zoom is only available for Windows platforms!')
+        'Recipe ie::zoom is only available for Windows platforms!'
+      )
     end
   end
 end
