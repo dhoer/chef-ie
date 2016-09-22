@@ -1,10 +1,10 @@
 # IE Cookbook
 
-[![Cookbook Version](http://img.shields.io/cookbook/v/ie.svg?style=flat-square)][cookbook]
-[![Build Status](http://img.shields.io/travis/dhoer/chef-ie.svg?style=flat-square)][travis]
+[![Cookbook Version](http://img.shields.io/cookbook/v/ie.svg?style=flat-square)][supermarket]
+[![win](https://img.shields.io/appveyor/ci/dhoer/chef-ie/master.svg?style=flat-square)][win]
 
-[cookbook]: https://supermarket.chef.io/cookbooks/ie
-[travis]: https://travis-ci.org/dhoer/chef-ie
+[supermarket]: https://supermarket.chef.io/cookbooks/ie
+[win]: https://ci.appveyor.com/project/dhoer/chef-ie
 
 The following recipes are available for configuring Internet Explorer:
 
